@@ -1,0 +1,36 @@
+name: Pylint Linting
+
+on:
+  push:
+    branches:
+      - main  # or any other branches you want to monitor
+  pull_request:
+    branches:
+      - main  # or any other branches you want to monitor
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # or your preferred Python version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint
+
+      - name: Extract zip file
+        run: |
+          mkdir extracted_code
+          unzip CIE3_FINAL.zip -d extracted_code  # This extracts the contents of CIE3_FINAL.zip
+
+      - name: Run Pylint
+        run: |
+          pylint extracted_code/app.py  # Replace app.py with the correct file if needed
