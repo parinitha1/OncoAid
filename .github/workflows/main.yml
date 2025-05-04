@@ -24,10 +24,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: 🚀 Run Flask app (test startup)
+    - name: 🚀 Run app.py directly (Flask test)
       run: |
-        export FLASK_APP=backend/app.py
-        export FLASK_ENV=development
-        flask run &
+        python app.py &
         sleep 10
         curl http://127.0.0.1:5000 || echo "Flask app failed to start"
