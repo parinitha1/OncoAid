@@ -1,69 +1,66 @@
 🧠 OncoAid – Bone Tumor Treatment Prediction App
-
-OncoAid is a full-stack AI-powered web application that predicts the optimal treatment for bone tumor patients using Machine Learning (ML), Deep Learning (DL), and Large Language Models (LLM). Built for accessibility, accuracy, and ease-of-use, OncoAid provides healthcare practitioners and researchers with intelligent insights based on patient inputs.
+OncoAid is a full-stack AI-powered web application designed to predict the optimal treatment for bone tumor patients using Machine Learning (ML), Deep Learning (DL), Quantum Machine Learning (QML), Quantum Neural Networks (QNN), and Large Language Models (LLM). It offers healthcare professionals accurate insights and personalized prevention tips powered by advanced AI technologies.
 
 🚀 Features
-✅ Current Functionality
-🔐 User Authentication & Authorization
+✅ User Authentication & Authorization
+Secure sign-up and login
 
-Sign-up and login with session handling
-
-Credentials stored securely with SQLite backend
+Session handling with user credentials stored in SQLite
 
 🧾 Patient Input System
-
-Input patient features like:
+Patient data inputs:
 
 Age
+
+Sex
+
+Grade
+
+Histological Type
 
 MSKCC Type
 
 Site of Primary STS
 
-Clean and intuitive web form with dropdowns
+User-friendly forms with dropdown menus
 
-🧠 ML & DL Treatment Prediction
+🧠 ML & DL-Based Prediction
+ML: Random Forest
 
-Machine Learning: Random Forest
+DL: TensorFlow/Keras Neural Network
 
-Deep Learning: Neural Network with TensorFlow/Keras
+Real-time predictions with performance feedback
 
-Real-time prediction display with model accuracy and performance indicators
+⚛️ Quantum Machine Learning (QML)
+Quantum-enhanced data analysis using Qiskit
+
+Improved pattern recognition and prediction accuracy
+
+🧬 Quantum Neural Networks (QNN)
+Hybrid classical-quantum models for complex classification tasks
+
+Experimental integration with QML pipelines
 
 💬 Gemini LLM Integration
+Gemini LLM powers:
 
-Integration with Gemini LLM for intelligent prediction explanations, medical insights, and prevention tips.
+Natural language explanations of model predictions
 
-Provides personalized prevention tips based on the patient's data and prediction results.
+Patient-specific prevention tips
 
-Natural language processing to deliver easily understandable, patient-specific advice.
-
-📁 Backend Processing (Python)
-
-Data preprocessing, prediction handling, and database logging
-
-Trained models saved as .pkl, .h5, and LLM files
-
-Integration with Gemini LLM for prediction explanations and prevention tips
-
-💻 Frontend Interface
-
-Built with HTML, Tailwind CSS, and JavaScript
-
-Interactive and responsive UI for both desktop and mobile
+Enhanced understanding of outcomes using conversational AI
 
 🛠️ Tech Stack
-
 Layer	Technology
 Frontend	HTML, Tailwind CSS, JavaScript
 Backend	Python, Flask
 ML/DL Models	Scikit-learn, TensorFlow
-LLM Integration	Gemini LLM
+QML/QNN	Qiskit, PennyLane (optional for QNN)
+LLM	Gemini LLM
 Database	SQLite
-Deployment	Localhost / Flask server
+Deployment	Localhost / Flask Server
 
-📁 Folder Structure
-
+📂 Folder Structure
 pgsql
 Copy
 Edit
@@ -74,31 +71,33 @@ OncoAid/
 │   ├── signup.html
 │   ├── about.html
 │   ├── contact.html
-│   ├── style.css (Tailwind CDN or config)
+│   ├── style.css
 │   └── script.js
 ├── backend/
 │   ├── app.py
-│   ├── model_utils.py
 │   ├── auth.py
-│   └── preprocessing.py
+│   ├── model_utils.py
+│   ├── preprocessing.py
+│   └── qml_qnn.py
 ├── models/
 │   ├── ml_model.pkl
 │   ├── dl_model.h5
-│   └── gemini_model.llm (example for LLM integration)
+│   ├── qml_model.qasm
+│   ├── qnn_model.qnn
+│   └── gemini_model.llm
 ├── db/
 │   └── users.db
 ├── static/
-│   └── images, icons, or CSS
+│   └── images/, icons/, css/
 ├── templates/
+│   ├── index.html
 │   ├── login.html
 │   ├── signup.html
-│   ├── index.html
 │   ├── about.html
 │   └── contact.html
 ├── requirements.txt
 └── README.md
 💡 How to Run the Project
-
 Clone the repository
 
 bash
@@ -106,24 +105,30 @@ Copy
 Edit
 git clone https://github.com/yourusername/OncoAid.git
 cd OncoAid
-Install the required dependencies
+Install dependencies
 
 bash
 Copy
 Edit
 pip install -r requirements.txt
-Start the application
+Run the Flask server
 
 bash
 Copy
 Edit
 python backend/app.py
+Note: To run QML and QNN modules, ensure you have Qiskit and optional PennyLane installed.
+
 🔮 Future Enhancements
+📤 CSV Upload + Batch Prediction
+Upload and predict treatments for multiple patients via CSV
 
-CSV Upload + Batch Prediction: Support for CSV file upload to predict treatment in bulk.
+📊 Advanced Analytics Dashboard
+Charts for input distributions, accuracy, and trends
 
-Advanced Analytics Dashboard: Visual insights on user inputs, model metrics, and prediction trends.
+🧾 Admin Panel
+Audit logs, user activity, and model performance tracking
 
-Admin Panel: User analytics, audit logs, and model tracking.
+🌐 Multi-language Support
+Support for multiple languages across the UI
 
-Multi-language Support: Enable UI localization for broader accessibility.
